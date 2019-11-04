@@ -9,7 +9,10 @@
 
     <typeAliases>
         <typeAlias type="com.zcq.po.Role" alias="role"/>
-<!--        包扫描配置别名，配合@Alias注解使用-->
+        <!--        包扫描配置别名，配合@Alias注解使用-->
         <package name="com.zcq.po"/>
     </typeAliases>
+    <typeHandlers>
+        <typeHandler handler="com.zcq.handler.MyStringTypeHandler" javaType="string" jdbcType="VARCHAR"/>
+    </typeHandlers>
 </configuration>

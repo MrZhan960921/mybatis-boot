@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zcq.mapper.RoleMapper">
+
+    <resultMap id="roleMap" type="role">
+        <id column="id" property="id" javaType="long" jdbcType="BIGINT"/>
+<!--        定义了jdbcType和javaType与自定义handler一致，就会转换-->
+        <result column="role_name" property="roleName" javaType="string" jdbcType="VARCHAR"/>
+<!--        定义结果类型转化器标识，才能使用类型转换器-->
+        <result column="note" property="note" typeHandler="com.zcq.handler.MyStringTypeHandler"/>
+    </resultMap>
+
     <select id="getRole" parameterType="long" resultType="role">
         select id,role_name as roleName,note from t_role where id=#{id}
     </select>

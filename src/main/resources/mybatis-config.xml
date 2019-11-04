@@ -6,4 +6,10 @@
     <settings>   <!-- 在本项目中开启二级缓存 -->
         <setting name="cacheEnabled" value="true"/>
     </settings>
+
+    <typeAliases>
+        <typeAlias type="com.zcq.po.Role" alias="role"/>
+<!--        包扫描配置别名，配合@Alias注解使用-->
+        <package name="com.zcq.po"/>
+    </typeAliases>
 </configuration>

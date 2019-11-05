@@ -1,7 +1,6 @@
 package com.zcq.mapper;
 
 import com.zcq.po.Role;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 /**

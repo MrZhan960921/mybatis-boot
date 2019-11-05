@@ -14,5 +14,7 @@
     </typeAliases>
     <typeHandlers>
         <typeHandler handler="com.zcq.handler.MyStringTypeHandler" javaType="string" jdbcType="VARCHAR"/>
+<!--        识别默认枚举类型处理器-->
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="com.zcq.enums.Sex"/>
     </typeHandlers>
 </configuration>

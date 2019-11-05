@@ -10,7 +10,7 @@
         <result column="note" property="note" typeHandler="com.zcq.handler.MyStringTypeHandler"/>
     </resultMap>
 
-    <select id="getRole" parameterType="long" resultType="role">
+    <select id="getRole" parameterType="long" resultMap="roleMap">
         select id,role_name as roleName,note from t_role where id=#{id}
     </select>
 </mapper>

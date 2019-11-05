@@ -32,4 +32,13 @@ public enum Sex {
     public void setName(String name) {
         this.name = name;
     }
+
+    public static Sex getSex(int id) {
+        if (id == 1) {
+            return MALE;
+        } else if (id == 2) {
+            return FEMALE;
+        }
+        return null;
+    }
 }

@@ -33,6 +33,6 @@ public class UserMapperTest {
         user.setNote("hahaha ");
         user.setBirthday(new Date());
         userMapper.insertUser(user);
-        System.out.println(userMapper.getUser(9L).getSex());
+        System.out.println(userMapper.getUser(10L).getSex());
     }
 }

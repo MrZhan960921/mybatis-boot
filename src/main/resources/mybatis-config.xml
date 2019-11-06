@@ -18,4 +18,7 @@
         <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="com.zcq.enums.Sex"/>
         <typeHandler handler="com.zcq.handler.SexEnumTypeHandler" javaType="com.zcq.enums.Sex"/>
     </typeHandlers>
+    <objectFactory type="com.zcq.factory.MyObjectFactory">
+        <property name="name" value="MyObjectFactory"/>
+    </objectFactory>
 </configuration>

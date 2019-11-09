@@ -15,5 +15,7 @@ public interface RoleMapper {
 
     public Role getRole(@Param(value = "id") Long id);
 
-    public List<Role> findRoleByMap(Map<String,String> params);
+    public List<Role> findRoleByMap(Map<String, String> params);
+
+    public void insertRole(Role role);
 }

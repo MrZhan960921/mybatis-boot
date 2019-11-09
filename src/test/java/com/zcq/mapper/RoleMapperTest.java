@@ -1,5 +1,6 @@
 package com.zcq.mapper;
 
+import com.zcq.po.Role;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,8 +24,9 @@ public class RoleMapperTest {
 
     @Test
     public void test() {
-        Map<String,String> paramsMap =new HashMap<String,String>();
-        paramsMap.put("roleName","me");
-        System.out.println(roleMapper.findRoleByMap(paramsMap).get(0).getId());
+        Role role=new Role();
+        role.setNote("1111111");
+        role.setRoleName("zdada");
+        roleMapper.insertRole(role);
     }
 }

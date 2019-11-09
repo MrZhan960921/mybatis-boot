@@ -4,11 +4,18 @@
 
     <resultMap id="roleMap" type="role">
         <id column="id" property="id" javaType="long" jdbcType="BIGINT"/>
-<!--        定义了jdbcType和javaType与自定义handler一致，就会转换-->
+        <!--        定义了jdbcType和javaType与自定义handler一致，就会转换-->
         <result column="role_name" property="roleName" javaType="string" jdbcType="VARCHAR"/>
-<!--        定义结果类型转化器标识，才能使用类型转换器-->
+        <!--        定义结果类型转化器标识，才能使用类型转换器-->
         <result column="note" property="note" typeHandler="com.zcq.handler.MyStringTypeHandler"/>
     </resultMap>
+    <insert id="insertRole" parameterType="com.zcq.po.Role" useGeneratedKeys="true" keyProperty="id">
+        -- 自定义主键规则
+        <selectKey keyProperty="id" resultType="long" order="BEFORE">
+            select if(max(id) is null,1,max(id)+2) as newId from t_role
+        </selectKey>
+        insert into t_role(id,role_name,note) values (#{id},#{roleName},#{note})
+    </insert>
 
     <select id="getRole" parameterType="long" resultMap="roleMap">
         select id,role_name as roleName,note from t_role where id=#{id}

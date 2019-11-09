@@ -1,6 +1,7 @@
 package com.zcq.mapper;
 
 import com.zcq.enums.Sex;
+
 import com.zcq.po.User;
 import org.junit.Assert;
 import org.junit.Test;
@@ -10,6 +11,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @Author: chaoqun
@@ -19,20 +22,11 @@ import java.util.Date;
 @SpringBootTest
 public class UserMapperTest {
 
-    @Autowired
-    private UserMapper userMapper;
+
 
     @Test
     public void test() {
-        User user = new User();
-        user.setUserName("zhangsan");
-        user.setCnname("张三");
-        user.setMobile("888888888");
-        user.setEmail("zhangsan@163.com");
-        user.setSex(Sex.MALE);
-        user.setNote("hahaha ");
-        user.setBirthday(new Date());
-        userMapper.insertUser(user);
-        System.out.println(userMapper.getUser(10L).getSex());
+
+        System.out.println(111);
     }
 }

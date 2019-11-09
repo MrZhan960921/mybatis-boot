@@ -13,4 +13,9 @@
     <select id="getRole" parameterType="long" resultMap="roleMap">
         select id,role_name as roleName,note from t_role where id=#{id}
     </select>
+    <select id="findRoleByMap" resultType="com.zcq.po.Role" parameterType="map">
+        select id,role_name as roleName,note from t_role where role_name
+        like concat('%',#{roleName},'%')
+    </select>
+
 </mapper>

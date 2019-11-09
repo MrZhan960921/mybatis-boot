@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @Author: chaoqun
  * @Date: 2019/11/4 20:52
@@ -20,6 +23,8 @@ public class RoleMapperTest {
 
     @Test
     public void test() {
-        Assert.assertEquals(roleMapper.getRole(1L).getRoleName(),"da");
+        Map<String,String> paramsMap =new HashMap<String,String>();
+        paramsMap.put("roleName","me");
+        System.out.println(roleMapper.findRoleByMap(paramsMap).get(0).getId());
     }
 }

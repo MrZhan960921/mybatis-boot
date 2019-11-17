@@ -1,30 +1,27 @@
 package com.zcq.mapper;
 
-import com.zcq.po.Role;
-import org.junit.Assert;
+import com.zcq.po.Student;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * @Author: chaoqun
- * @Date: 2019/11/4 20:52
+ * @Date: 2019/11/17 20:47
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class RoleMapperTest {
+public class StudentMapperTest {
 
     @Autowired
-    private RoleMapper roleMapper;
+    private StudentMapper studentMapper;
 
     @Test
     public void test() {
 
-        roleMapper.getRole(1L);
+        Student student = studentMapper.getStudent(1);
+        System.out.println(student);
     }
 }

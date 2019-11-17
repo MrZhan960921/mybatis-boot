@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zcq.mapper.StudentMapper">
+    <resultMap id="studentMap" type="com.zcq.po.Student">
+        <id property="id" column="id"/>
+        <result property="cnName" column="cnname"/>
+        <result property="selfCardNo" column="selfcard_no"/>
+        <result property="note" column="note"/>
+        <result property="sex" column="sex" jdbcType="INTEGER" javaType="com.zcq.enums.Sex"
+                typeHandler="com.zcq.handler.SexEnumTypeHandler"/>
+        <!--        一对一映射-->
+        <association property="studentSelfcard" column="id"
+                     select="com.zcq.mapper.StudentSelfcardMapper.findStudentSelfcardByStudentId"/>
+    </resultMap>
+    <select id="getStudent" parameterType="int" resultMap="studentMap">
+        select id,cnname,sex,note,selfcard_no from t_student where id=#{id}
+    </select>
+</mapper>

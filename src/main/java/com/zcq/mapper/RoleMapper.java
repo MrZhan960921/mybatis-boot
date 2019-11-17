@@ -13,7 +13,7 @@ import java.util.Map;
 //@Mapper
 public interface RoleMapper {
 
-    public Role getRole(@Param(value = "id") Long id);
+    public Role getRole(@Param( "id") Long id);
 
     public List<Role> findRoleByMap(Map<String, String> params);
 

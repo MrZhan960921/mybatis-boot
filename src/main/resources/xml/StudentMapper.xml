@@ -11,6 +11,8 @@
         <!--        一对一映射-->
         <association property="studentSelfcard" column="id"
                      select="com.zcq.mapper.StudentSelfcardMapper.findStudentSelfcardByStudentId"/>
+        <collection property="studentLectureList" column="id"
+                    select="com.zcq.mapper.StudentLectureMapper.findStudentLectureByStudentId"/>
     </resultMap>
     <select id="getStudent" parameterType="int" resultMap="studentMap">
         select id,cnname,sex,note,selfcard_no from t_student where id=#{id}
